@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Profile } from '../../models/profile/profile';
 
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +10,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  existingProfile = {} as Profile;
+
+  constructor(private navCtrl: NavController, private navParams: NavParams) {
+    }
+
+  getExistingProfile(profile: Profile){
+    this.existingProfile = profile;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+  navigateToEditProfilePage(){
+    this.navCtrl.push('EditProfilePage', { existingProfile: this.existingProfile});
   }
 
 }

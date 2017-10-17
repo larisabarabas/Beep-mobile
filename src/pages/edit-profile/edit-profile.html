@@ -9,5 +9,7 @@
 
 
 <ion-content padding>
-  <edit-profile></edit-profile>
+  <edit-profile [profile]="profile" (saveProfileResult)="saveProfileResult($event)"></edit-profile>
 </ion-content>
+
+

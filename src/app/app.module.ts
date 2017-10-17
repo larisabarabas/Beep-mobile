@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {  NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -15,19 +15,20 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from '../providers/auth/auth.service';
 import { DataService } from '../providers/data/data.service';
 import { AngularFireDatabaseModule} from 'angularfire2/database'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
-
+    LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,7 +40,6 @@ import { AngularFireDatabaseModule} from 'angularfire2/database'
     StatusBar,
     SplashScreen,
     AngularFireAuth,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     DataService,
   ]

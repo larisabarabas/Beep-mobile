@@ -6,7 +6,6 @@ import { InboxPage } from '../inbox/inbox';
 import { TabsPage } from '../tabs/tabs';
 import { ComponentsModule } from '../../components/components.module';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth'
-import { EditProfilePage } from '../edit-profile/edit-profile';
 
 
 @NgModule({
@@ -14,8 +13,7 @@ import { EditProfilePage } from '../edit-profile/edit-profile';
     LoginPage,
     RegisterPage,
     InboxPage,
-    TabsPage,
-    EditProfilePage
+    TabsPage
   ],
   imports: [
     IonicPageModule.forChild(LoginPage),

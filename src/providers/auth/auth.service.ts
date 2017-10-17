@@ -11,7 +11,7 @@ export class AuthService {
   }
 
 getAuthenticatedUser(){
-return this.auth.authState;
+  return this.auth.authState;
 }
   async signInWithEmailAndPassword(account: Account){
     try{
